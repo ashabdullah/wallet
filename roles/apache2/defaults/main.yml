@@ -1,0 +1,4 @@
+---
+www_root: /var/www
+www_user: deployer
+www_group: www-data

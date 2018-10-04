@@ -1,0 +1,20 @@
+---
+- debug: msg="www_root = {{www_root}}"
+- debug: msg="www_user = {{www_user}}"
+- debug: msg="www_group = {{www_group}}"
+
+- name: Install apache2
+  action: apt pkg=apache2 state=installed
+  become: true
+  notify:
+    - Restart apache2
+
+- name: Add group(s) {{www_group}} to {{ www_user }} user
+  become: true
+  user: name={{www_user}} groups={{www_group}} append=yes
+
+- name: Ensure permission of owner {{www_user}} and group {{www_group}} at {{www_root}}
+  action: >
+    file path={{www_root}}
+    owner={{www_user}} group={{www_group}} state=directory recurse=yes
+  become: true
