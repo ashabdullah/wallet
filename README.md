@@ -1,4 +1,4 @@
-# Barn - Ansible playbooks for Laravel applications
+# Ansible playbooks for Laravel applications
 This repository provides Ansible playbook targeted spesifically for Laravel applications. If you are not familiar with Ansible, it is an open-source tool that is most commonly used for provisioning, configuration management and deployment. Together with Ansible and these playbooks you can automate provisioning of your servers and development environment. Please note that Barn is not the designed to handle the actual deployment of the Laravel application. For deployment tools I suggest you checkout [Envoyer](https://envoyer.io/), [Deployer](https://deployer.org) or [Capistrano](http://capistranorb.com/) to name a few. Barn can automatically configures the following:
 
 * PHP
